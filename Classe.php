@@ -1,9 +1,12 @@
 <?php
+include_once 'Alunno.php';
 
 class Classe {
+    public $nome;
     public $lista_alunni;
 
     function __construct() {
+        $this->nome = "5^DIA";
         $this->lista_alunni = [
             new Alunno("Anatolie", "Pavlov", 20), 
             new Alunno("Riccardo", "Grandi", 19),     
