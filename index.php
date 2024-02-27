@@ -27,7 +27,7 @@ $app->get('/alunni/{nome}', function (Request $request, Response $response, $arg
     $alunnoCercato = null;
 
     foreach ($classe->lista_alunni as $alunno) {
-        if (strtolower($alunno->getNome()) === $nomeCercato) {
+        if (strtolower($alunno->getNome()) === strtolower($nomeCercato)) {
             $alunnoCercato = $alunno;
             break;
         }
