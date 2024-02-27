@@ -16,12 +16,14 @@ $app->get('/', function (Request $request, Response $response, $args) {
 
 $classe = new Classe();
 
-$app->get('/alunni', function (Request $request, Response $response, $args) use ($classe) {
+$app->get('/alunni', function (Request $request, Response $response, $args) {
+    $classe = new Classe();
     $response->getBody()->write($classe->stampaClasse());
     return $response;
 });
 
-$app->get('/alunni/{nome}', function (Request $request, Response $response, $args) use ($classe) {
+$app->get('/alunni/{nome}', function (Request $request, Response $response, $args) {
+    $classe = new Classe();
     
     $nomeCercato = $args['nome'];
     $alunnoCercato = null;
